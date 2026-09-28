@@ -49,5 +49,5 @@ export default function ServiceMap() {
     };
   }, []);
 
-  return <div ref={mapEl} className="h-[260px] w-full sm:h-[380px] md:h-[440px]" role="img" aria-label="Map of the 10-mile Durham County service area" />;
+  return <div ref={mapEl} className="h-[200px] w-full sm:h-[280px] md:h-[320px]" role="img" aria-label="Map of the 10-mile Durham County service area" />;
 }
