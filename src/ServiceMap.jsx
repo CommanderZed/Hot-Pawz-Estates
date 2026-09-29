@@ -11,8 +11,14 @@ export default function ServiceMap() {
 
     const center = [36.0798, -78.9565];
     const map = L.map(mapEl.current, {
+      dragging: false,
+      tap: false,
+      touchZoom: false,
       scrollWheelZoom: false,
-      zoomControl: true
+      doubleClickZoom: false,
+      boxZoom: false,
+      keyboard: false,
+      zoomControl: false
     }).setView(center, 10);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -26,12 +32,18 @@ export default function ServiceMap() {
       weight: 2,
       dashArray: "8 8",
       fillColor: "#d46932",
-      fillOpacity: 0.16
+      fillOpacity: 0.16,
+      interactive: false
     }).addTo(map);
 
     function fitServiceArea() {
       map.invalidateSize();
+      map.setMinZoom(1);
+      map.setMaxZoom(10);
       map.fitBounds(serviceRadius.getBounds(), { padding: [20, 20], maxZoom: 10 });
+      const lockedZoom = map.getZoom();
+      map.setMinZoom(lockedZoom);
+      map.setMaxZoom(lockedZoom);
     }
 
     mapRef.current = map;

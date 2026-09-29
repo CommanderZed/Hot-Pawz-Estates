@@ -13,6 +13,20 @@ function CheckIcon() {
   );
 }
 
+function EbayStoreLink({ className = "" }) {
+  return (
+    <a
+      href="https://ebay.io/m/tBjNNH"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Hot Pawz eBay store"
+      className={`inline-flex items-center opacity-90 transition hover:opacity-100 ${className}`}
+    >
+      <img src="/ebay-logo.svg" alt="" className="h-7 w-auto sm:h-8" />
+    </a>
+  );
+}
+
 export default function App() {
   return (
     <>
@@ -23,20 +37,20 @@ export default function App() {
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-50 bg-[#f6efe4]/95 backdrop-blur-md">
+      <header className="sticky top-0 z-[1200] bg-[#f6efe4]/95 backdrop-blur-md">
         <div className="h-[3px] bg-gradient-to-r from-slateink-800 via-ambergold-500 to-mustard-500" />
-        <div className="mx-auto max-w-6xl px-4 py-2 sm:px-8 sm:py-2.5">
-          <a href="#top" className="flex min-w-0 items-center gap-2 sm:gap-2.5" aria-label="Hot Pawz Estates home">
+        <div className="mx-auto max-w-6xl px-4 py-3.5 sm:px-8 sm:py-4">
+          <a href="#top" className="flex min-w-0 items-center gap-3 sm:gap-4" aria-label="Hot Pawz Estates home">
             <img
               src="/hot-pawz-logo.jpg"
               alt=""
-              className="h-11 w-11 rounded-full object-cover object-center sm:h-12 sm:w-12"
+              className="h-14 w-14 rounded-full object-cover object-center sm:h-16 sm:w-16"
             />
             <span className="min-w-0">
-              <span className="block truncate font-display text-xs font-semibold tracking-[0.14em] text-slateink-800 sm:text-sm sm:tracking-[0.18em]">
+              <span className="block truncate font-display text-base font-semibold tracking-[0.16em] text-slateink-800 sm:text-lg sm:tracking-[0.2em]">
                 HOT PAWZ ESTATES
               </span>
-              <span className="block truncate text-[10px] tracking-[0.08em] text-slateink-500 sm:text-[11px] sm:tracking-[0.12em]">
+              <span className="mt-0.5 block truncate text-xs tracking-[0.1em] text-slateink-500 sm:text-sm sm:tracking-[0.14em]">
                 Consignment & Liquidation
               </span>
             </span>
@@ -45,6 +59,14 @@ export default function App() {
       </header>
 
       <main id="main">
+        <div className="mx-auto max-w-6xl px-4 pt-4 sm:px-8 sm:pt-5">
+          <img
+            src="/hot-pawz-banner.jpg"
+            alt="Hot Pawz: unique finds and private collections"
+            className="w-full rounded-xl object-cover shadow-card"
+          />
+        </div>
+
         <section id="top">
           <div className="mx-auto max-w-6xl px-4 py-5 sm:px-8 sm:py-8">
             <h1 className="max-w-3xl font-display text-[1.55rem] font-semibold leading-snug text-slateink-800 sm:text-3xl md:text-4xl">
@@ -80,44 +102,24 @@ export default function App() {
 
           <div className="mt-4 grid gap-3 lg:grid-cols-3">
             <article className="relative flex flex-col overflow-hidden rounded-xl border border-slateink-800/15 bg-stonewarm-50 px-4 py-4 shadow-card sm:px-5 sm:py-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ambergold-600">eBay</p>
-              <h3 className="mt-1 font-display text-lg font-semibold text-slateink-800">Hot Pawz storefront</h3>
+              <h3 className="font-display text-lg font-semibold text-slateink-800">Hot Pawz storefront</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slateink-600">
                 Jewelry, silver, electronics, books, and other parcel-sized pieces. National buyers. Tracked parcel mail only.
               </p>
-              <p className="mt-3 rounded-lg border border-stonewarm-200 bg-stonewarm-100 px-3 py-2 text-sm text-slateink-700">
-                No freight shipping.
-              </p>
-              <a
-                href="https://ebay.io/m/tBjNNH"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-ambergold-700 hover:text-ambergold-600"
-              >
-                Visit the Hot Pawz eBay store
-                <span aria-hidden="true">↗</span>
-              </a>
+              <EbayStoreLink className="mt-3 self-start" />
             </article>
 
             <article className="relative flex flex-col overflow-hidden rounded-xl border border-slateink-800/15 bg-stonewarm-50 px-4 py-4 shadow-card sm:px-5 sm:py-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ambergold-600">Private network</p>
-              <h3 className="mt-1 font-display text-lg font-semibold text-slateink-800">Collectors and dealers</h3>
+              <h3 className="font-display text-lg font-semibold text-slateink-800">Collectors and dealers</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slateink-600">
                 Antiques, artifacts, and period pieces placed quietly with collectors and regional dealers in the Triangle.
               </p>
-              <p className="mt-3 rounded-lg border border-stonewarm-200 bg-stonewarm-100 px-3 py-2 text-sm text-slateink-700">
-                Confidential evaluation and private placement.
-              </p>
             </article>
 
             <article className="relative flex flex-col overflow-hidden rounded-xl border border-slateink-800/15 bg-stonewarm-50 px-4 py-4 shadow-card sm:px-5 sm:py-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ambergold-600">Durham / Triangle</p>
-              <h3 className="mt-1 font-display text-lg font-semibold text-slateink-800">Local pickup</h3>
+              <h3 className="font-display text-lg font-semibold text-slateink-800">Local pickup</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slateink-600">
                 Furniture, lighting, and larger household pieces. We handle messaging, vetting, and pickup timing.
-              </p>
-              <p className="mt-3 rounded-lg border border-stonewarm-200 bg-stonewarm-100 px-3 py-2 text-sm text-slateink-700">
-                No freight. Local pickup only.
               </p>
             </article>
           </div>
@@ -130,12 +132,9 @@ export default function App() {
                 On-site work in Durham County
               </h2>
             </div>
-            <div className="mt-4 overflow-hidden rounded-xl border border-slateink-800/15 shadow-card">
+            <div className="relative z-0 mt-4 overflow-hidden rounded-xl border border-slateink-800/15 shadow-card">
               <ServiceMap />
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-slateink-500">
-              eBay listings still ship nationally by parcel. Larger pieces stay local.
-            </p>
           </div>
         </section>
 
@@ -153,20 +152,12 @@ export default function App() {
       </main>
 
       <footer className="text-slateink-700">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:gap-6 sm:px-8 sm:py-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-8 sm:py-6">
           <div>
             <p className="font-display text-sm font-semibold tracking-[0.16em] text-slateink-800">HOT PAWZ ESTATES</p>
             <p className="mt-2 text-sm">Durham, North Carolina</p>
-            <p className="mt-1 text-sm text-slateink-500">Licensed & Insured</p>
           </div>
-          <a
-            href="https://ebay.io/m/tBjNNH"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-10 items-center text-sm font-medium text-ambergold-700 hover:text-ambergold-600"
-          >
-            Official Hot Pawz eBay Store ↗
-          </a>
+          <EbayStoreLink />
         </div>
       </footer>
     </>
