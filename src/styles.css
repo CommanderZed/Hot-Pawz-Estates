@@ -424,6 +424,14 @@ img {
   color: var(--muted);
 }
 
+.honey {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field input[type="text"],
 .field input[type="email"],
 .field input[type="tel"],
