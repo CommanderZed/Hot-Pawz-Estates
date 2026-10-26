@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 8765 --host",
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"node server/index.js\" \"vite --port 8765 --host\"",
     "build": "vite build",
     "preview": "vite preview --port 8765 --host"
   },
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.4",
     "vite": "^7.1.0"
   }
 }

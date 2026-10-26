@@ -1,7 +1,7 @@
 import IntakeForm from "./IntakeForm.jsx";
 
 const EBAY_STORE_URL = "https://ebay.io/m/tBjNNH";
-const CONTACT_EMAIL = "Hotpawzestates@gmail.com";
+const CONTACT_EMAIL = "hotpawzestates@gmail.com";
 const INSTAGRAM_URL = "https://www.instagram.com/hotpawzestates";
 
 const NAV_LINKS = [

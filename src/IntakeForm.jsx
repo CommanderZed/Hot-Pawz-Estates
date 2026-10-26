@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
-export default function IntakeForm({ contactEmail }) {
+const FORM_SUBMIT_EMAIL = "hotpawzestates@gmail.com";
+
+export default function IntakeForm({ contactEmail = FORM_SUBMIT_EMAIL }) {
   const {
     register,
     handleSubmit,
@@ -19,6 +21,7 @@ export default function IntakeForm({ contactEmail }) {
     body.append("_subject", "Hot Pawz Estates: new consignment inquiry");
     body.append("_template", "table");
     body.append("_captcha", "false");
+    body.append("_honey", "");
     body.append("_replyto", values.email);
     body.append("Name", values.name);
     body.append("Email", values.email);
@@ -28,7 +31,7 @@ export default function IntakeForm({ contactEmail }) {
     Array.from(values.photos || []).forEach((file) => body.append("attachment", file));
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${contactEmail}`, {
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(FORM_SUBMIT_EMAIL)}`, {
         method: "POST",
         headers: { Accept: "application/json" },
         body
@@ -60,7 +63,7 @@ export default function IntakeForm({ contactEmail }) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} method="post" encType="multipart/form-data" noValidate>
       <div className="field">
         <label htmlFor="intake-name">Your name</label>
         <input
@@ -110,7 +113,15 @@ export default function IntakeForm({ contactEmail }) {
         <label htmlFor="intake-photos">
           Photographs <span className="optional">(optional)</span>
         </label>
-        <input id="intake-photos" type="file" accept="image/*" multiple aria-describedby="intake-photos-hint" {...register("photos")} />
+        <input
+          id="intake-photos"
+          type="file"
+          accept="image/*"
+          multiple
+          aria-describedby="intake-photos-hint"
+          {...register("photos")}
+          name="photos"
+        />
         <p className="hint" id="intake-photos-hint">
           They enable a faster assessment.
         </p>
